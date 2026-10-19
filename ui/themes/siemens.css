@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Customer theme: Siemens
+   File: public/ui/themes/siemens.css   — HOST LAYER ONLY.
+   Default mode: dark   (defaultMode in src/brand/siemens.json; the app has been dark-first since v1)
+
+   Reuses the logo, colours and fonts already in the app (Emily, 2026-10-07):
+   - Siemens petrol from the logo (#009999) as the brand colour, deepened for text in light mode (#00706F) and lifted
+     in dark mode (#00ADAD) so every text use clears 4.5:1. Snowflake Blue is not used in this layer.
+   - The app's existing neutrals and status colours; the app's four further chart colours.
+   - Arial: Siemens Sans is licensed and not available for web use here, so the app's existing face stays.
+   Checks: scripts/contrast_check.py (both modes) and scripts/check_snowflake_layer.py.
+   ========================================================================== */
+
+/* ── LIGHT MODE: all tokens ─────────────────────────────────────────────── */
+[data-host="siemens"]{
+  color-scheme:light;
+
+  /* Surfaces and text */
+  --canvas:#F2F5F8;        /* page background */
+  --surface:#FFFFFF;       /* cards */
+  --surface-2:#E8EFF5;     /* inset panels */
+  --ink:#183044;
+  --ink-2:#34495D;
+  --ink-3:#53677B;         /* 5.0:1 on surface-2 */
+  --line:#C9D5DF;
+  --line-strong:#7D8FA0;   /* 3.3:1 on surface */
+
+  /* Navigation */
+  --nav-bg:#FFFFFF;
+  --nav-ink:#53677B;
+  --nav-sec:#00706F;
+  --nav-active-bg:#E6F1F1;
+  --nav-active-ink:#183044;
+  --nav-active-bar:#009999;  /* the logo petrol */
+
+  /* Header band (quiet brand: not used by this app's screens, kept defined) */
+  --band-bg:#FFFFFF;
+  --band-ink:#183044;
+  --band-hl:#00706F;
+  --band-border:#C9D5DF;
+  --band-dot:#009999;
+
+  /* Actions */
+  --action:#00706F;        /* 5.9:1 on surface, 5.1:1 on surface-2 */
+  --on-action:#F4FBFF;     /* the app's existing near-white on accent */
+
+  /* Status: the app's existing red, amber and green, always with a text label or sign */
+  --crit:#B03333; --crit-bg:#F7EBEB;
+  --risk:#845100; --risk-bg:#F3EEE6;
+  --ok:#176A45;   --ok-bg:#E8F0EC;
+  --st-ink:#183044;
+
+  /* Charts: petrol first, the app's neutral comparison, then its orange, green and purple */
+  --series-1:#009999; --series-2:#63788A; --series-3:#A14F00;
+  --series-4:#176A45; --series-5:#6A46A8;
+  --shade:#EEF3F7;
+
+  /* Card titles and labels */
+  --title-ink:#183044; --label-ink:#53677B;
+
+  /* Workflow steps (no band on this app's screens; kept defined) */
+  --step-done-bg:#E8EFF5; --step-done-ink:#183044;
+  --step-cur-bg:#00706F;  --step-cur-ink:#F4FBFF; --step-cur-border:#00706F;
+  --step-fut-border:#7D8FA0; --step-fut-ink:#53677B;
+
+  /* Not mode-dependent */
+  --band-deco:none;
+  --ui-font:Arial, Helvetica, sans-serif;
+  --display:Arial, Helvetica, sans-serif;
+  --display-weight:600;
+  --display-case:none;
+  --display-track:-.03em;
+  --num-font:Arial, Helvetica, sans-serif;
+  --num-weight:700;
+  --strong-weight:700;
+  --th-weight:700;
+  --title-weight:700; --title-case:uppercase; --title-track:0; --title-size:12px;
+  --label-weight:600; --label-track:.08em; --label-size:11px;
+  --wordmark-track:0;
+  --cover-size:44px; --cover-lh:1.05; --cover-stack:inline;
+}
+
+
+/* ── DARK MODE: colour tokens only (same contrast targets) ──────────────── */
+[data-host="siemens"][data-mode="dark"]{
+  color-scheme:dark;
+  --canvas:#191E24; --surface:#1E252F; --surface-2:#263545;
+  --ink:#E8ECF0; --ink-2:#C9D3DD; --ink-3:#A4B3C5;
+  --line:#354253; --line-strong:#64788F;
+
+  --nav-bg:#1E252F; --nav-ink:#A4B3C5; --nav-sec:#00ADAD;
+  --nav-active-bg:#1B333C; --nav-active-ink:#E8ECF0; --nav-active-bar:#00ADAD;
+
+  --band-bg:#1E252F; --band-ink:#E8ECF0; --band-hl:#00ADAD; --band-border:#354253; --band-dot:#00ADAD;
+
+  --action:#00ADAD; --on-action:#06212B;
+
+  --crit:#FF9797; --crit-bg:#3A2A30; --risk:#F5BD61; --risk-bg:#3A3326; --ok:#6DD4A0; --ok-bg:#243A33; --st-ink:#E8ECF0;
+
+  --series-1:#00ADAD; --series-2:#A4B3C5; --series-3:#F5A65B; --series-4:#6DD4A0; --series-5:#C3A6F2; --shade:#232C37;
+
+  --title-ink:#E8ECF0; --label-ink:#A4B3C5;
+
+  --step-done-bg:#263545; --step-done-ink:#E8ECF0;
+  --step-cur-bg:#00ADAD; --step-cur-ink:#06212B; --step-cur-border:#00ADAD;
+  --step-fut-border:#64788F; --step-fut-ink:#A4B3C5;
+}
